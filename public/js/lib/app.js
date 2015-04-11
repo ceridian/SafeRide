@@ -1,7 +1,40 @@
 (function(){
 	'use strict';
 	//var app = angular.module('home', ['ngRoute', 'ngAnimate', 'ui.grid', 'growlNotifications']);
-	var app = angular.module('home', []);
+	var app = angular.module('home', ['ngAnimate', 'growlNotifications']);
+
+	app.factory('socket', ['$rootScope', function ($rootScope) {
+		var socket = io.connect();
+		return {
+			on: function (eventName, callback) {
+				socket.on(eventName, function () {
+					var args = arguments;
+					$rootScope.$apply(function () {
+						callback.apply(socket, args);
+					});
+				});
+			},
+			emit: function (eventName, data, callback) {
+				socket.emit(eventName, data, function () {
+					var args = arguments;
+					$rootScope.$apply(function () {
+						if (callback) {
+							callback.apply(socket, args);
+						}
+					});
+				})
+			}
+		};
+	}]);
+
+	app.controller('notifications', ['$rootScope', 'socket', function($rootScope, socket){
+		$rootScope.notes = [];
+		socket.on('alert', function(msg){
+			console.log(msg);
+			$rootScope.notes.push(msg);
+		});
+	}]);
+
 })();
 	/*app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
 		$routeProvider
