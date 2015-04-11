@@ -79,6 +79,11 @@
 		};
 	});
 
+	app.controller('MainCtrl', ['$scope', function($scope){
+		$scope.$on('LOAD', function(){$scope.loading=true});
+		$scope.$on('UNLOAD', function(){$scope.loading=false});
+	} ]);
+
 	app.controller('LoginSetup', ['$http', '$rootScope', '$location', '$scope', function($http, $rootScope, $location){
 		this.name = 'Login';
 
