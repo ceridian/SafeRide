@@ -12,21 +12,6 @@
 				controller: 'LoginSetup',
 				controllerAs: 'login'
 			})
-			.when('/app/status', {
-				templateUrl: 'temps/status-setup.html',
-				controller: 'StatusSetup',
-				controllerAs: 'status'
-			})
-			.when('/app/hive', {
-				templateUrl: 'temps/hive-setup.html',
-				controller: 'HiveSetup',
-				controllerAs: 'hive'
-			})
-			.when('/app/jobs', {
-				templateUrl: 'temps/jobs-setup.html',
-				controller: 'JobsSetup',
-				controllerAs: 'jobs'
-			})
 			.when('/app/settings', {
 				templateUrl: 'temps/settings-setup.html',
 				controller: 'SettingsSetup',
@@ -114,7 +99,7 @@
 		});
 	}]);
 
-	app.controller('LoginSetup', ['$http', '$rootScope', '$location', '$scope', function($http, $rootScope, $location){
+	/*app.controller('LoginSetup', ['$http', '$rootScope', '$location', '$scope', function($http, $rootScope, $location){
 		this.name = 'Login';
 
 		this.login = function(main){
@@ -479,7 +464,7 @@
 				svg.select(".y.axis").call(yAxis);
 				svg.selectAll('path.line').attr('d', line);
 			}*/
-
+/*
 		}).error(function(data){
 			console.log(data);
 		});
@@ -614,5 +599,5 @@
 		}).error(function(data){
 			console.log(data);
 		});
-	}]);
+	}]);*/
 })();
