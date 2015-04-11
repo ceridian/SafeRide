@@ -10,8 +10,11 @@
 			})
 			.when('/login', {
 				templateUrl: 'temps/test2.html'
+			})
+			.otherwise({
+				templateUrl: 'temps/test1.html'
 			});
-			
+
 		$locationProvider.html5Mode(true);
 
 	} ]);
