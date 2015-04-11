@@ -6,10 +6,14 @@
 	app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
 		$routeProvider
 			.when('/login', {
-				templateUrl: 'temps/test2.html'
+				templateUrl: 'temps/login-setup.html',
+				controller: 'LoginSetup',
+				controllerAs: 'login'
 			})
 			.otherwise({
-				templateUrl: 'temps/test1.html'
+				templateUrl: 'temps/login-setup.html',
+				controller: 'LoginSetup',
+				controllerAs: 'login'
 			});
 
 		$locationProvider.html5Mode(true);
