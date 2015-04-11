@@ -3,6 +3,19 @@
 	//var app = angular.module('home', ['ngRoute', 'ngAnimate', 'ui.grid', 'growlNotifications']);
 	var app = angular.module('home', ['ngRoute', 'ngAnimate', 'growlNotifications']);
 
+	app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
+		$routeProvider
+			.when('/', {
+				templateUrl: 'temps/test1.html'
+			})
+			.when('/login', {
+				templateUrl: 'temps/test2.html'
+			});
+			
+		$locationProvider.html5Mode(true);
+
+	} ]);
+
 	/*app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
 		$routeProvider
 			.when('/', {
@@ -27,7 +40,7 @@
 		$locationProvider.html5Mode(true);
 	} ]);*/
 
-	app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
+	/*app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
 		$routeProvider
 			.when('/', {
 				redirect: '/login'
@@ -64,7 +77,7 @@
 			});
 
 		$locationProvider.html5Mode(true);
-	} ]);
+	} ]);*/
 
 	app.factory('socket', ['$rootScope', function ($rootScope) {
 		var socket = io.connect();
