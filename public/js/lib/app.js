@@ -5,9 +5,6 @@
 
 	app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
 		$routeProvider
-			.when('/', {
-				redirect: '/login'
-			})
 			.when('/login', {
 				templateUrl: 'temps/test2.html'
 			})
