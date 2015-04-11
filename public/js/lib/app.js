@@ -1,6 +1,6 @@
 (function(){
 	'use strict';
-	var app = angular.module('home', ['ngRoute', 'ngAnimate', 'growlNotifications']);
+	//var app = angular.module('home', ['ngRoute', 'ngAnimate', 'growlNotifications']);
 
 })();
 
