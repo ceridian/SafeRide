@@ -59,6 +59,16 @@
 		});
 	}]);
 
+	app.directive('mainView', function(){
+		return {
+			restrict: 'E',
+			templateUrl: 'temps/mainView.html',
+			controller: function($scope, $rootScope){
+
+			}
+		};
+	});
+
 	app.controller('LoginSetup', ['$http', '$rootScope', '$location', '$scope', function($http, $rootScope, $location){
 		this.name = 'Login';
 
