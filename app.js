@@ -37,14 +37,14 @@ app.use(function(req, res, next){
 
 // error handlers
 
-app.use(function(err, req, res, next) {
+/*app.use(function(err, req, res, next) {
   if(err){
     res.status(err.status || 500);
     res.send(err);
   }else{
     res.redirect('/');
   }
-});
+});*/
 
 // catch 404 and forward to error handler
 /*app.use(function(req, res, next) {
