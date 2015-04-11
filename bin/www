@@ -4,6 +4,7 @@ var debug = require('debug')('Enary');
 var app = require('../app');
 var models = require("../models");
 var i = require('../lib/io.js');
+var http = require('http');
 
 
 models.sequelize.sync().complete(function(err) {
