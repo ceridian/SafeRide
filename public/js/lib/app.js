@@ -87,7 +87,7 @@
 			var pass = main.pass;
 
 			console.log(main);
-			/*$http.post('/login', {user: user, pass: pass}).success(function(data, status, headers, config){
+			$http.post('/login', {user: user, pass: pass}).success(function(data, status, headers, config){
 				var status = data.status;
 				var user = data.user;
 				var group = data.group;
@@ -99,7 +99,7 @@
 				}
 			}).error(function(data, status, headers, config) {
 				console.log(data.status);
-			});*/
+			});
 		};
 	} ]);
 
