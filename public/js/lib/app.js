@@ -1,7 +1,31 @@
 (function(){
 	'use strict';
 	//var app = angular.module('home', ['ngRoute', 'ngAnimate', 'ui.grid', 'growlNotifications']);
-	var app = angular.module('home', ['ngAnimate', 'growlNotifications']);
+	var app = angular.module('home', ['ngRoute', 'ngAnimate', 'growlNotifications']);
+
+	app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
+		$routeProvider
+			.when('/', {
+				redirect: '/login'
+			})
+			.when('/app/login', {
+				templateUrl: 'temps/login-setup.html',
+				controller: 'LoginSetup',
+				controllerAs: 'login'
+			})
+			.when('/app/settings', {
+				templateUrl: 'temps/settings-setup.html',
+				controller: 'SettingsSetup',
+				controllerAs: 'settings'
+			})
+			.otherwise({
+				templateUrl: 'temps/login-setup.html',
+				controller: 'LoginSetup',
+				controllerAs: 'login'
+			});
+
+		$locationProvider.html5Mode(true);
+	} ]);
 
 	app.factory('socket', ['$rootScope', function ($rootScope) {
 		var socket = io.connect();
@@ -34,6 +58,30 @@
 			$rootScope.notes.push(msg);
 		});
 	}]);
+
+	app.controller('LoginSetup', ['$http', '$rootScope', '$location', '$scope', function($http, $rootScope, $location){
+		this.name = 'Login';
+
+		this.login = function(main){
+			var user = main.user;
+			var pass = main.pass;
+
+			console.log(main);
+			/*$http.post('/login', {user: user, pass: pass}).success(function(data, status, headers, config){
+				var status = data.status;
+				var user = data.user;
+				var group = data.group;
+				if(status == 'ok'){
+					$rootScope.loggedInUser = user;
+					$location.path('/app/status');
+				}else{
+					console.log(status);
+				}
+			}).error(function(data, status, headers, config) {
+				console.log(data.status);
+			});*/
+		};
+	} ]);
 
 })();
 	/*app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
