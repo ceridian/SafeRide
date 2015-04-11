@@ -1,10 +1,8 @@
 (function(){
 	'use strict';
-	//var app = angular.module('home', ['ngRoute', 'ngAnimate', 'growlNotifications']);
+	var app = angular.module('home', ['ngRoute', 'ngAnimate', 'growlNotifications']);
 
-})();
-
-	/*app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
+	app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
 		$routeProvider
 			.when('/', {
 				redirect: '/login'
@@ -481,7 +479,7 @@
 				svg.select(".y.axis").call(yAxis);
 				svg.selectAll('path.line').attr('d', line);
 			}*/
-/*
+
 		}).error(function(data){
 			console.log(data);
 		});
@@ -617,4 +615,4 @@
 			console.log(data);
 		});
 	}]);
-})();*/
+})();
