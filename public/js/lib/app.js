@@ -1,8 +1,9 @@
 (function(){
 	'use strict';
-	/*var app = angular.module('home', ['ngRoute', 'ngAnimate', 'ui.grid', 'growlNotifications']);
-
-	app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
+	//var app = angular.module('home', ['ngRoute', 'ngAnimate', 'ui.grid', 'growlNotifications']);
+	var app = angular.module('home', []);
+})();
+	/*app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
 		$routeProvider
 			.when('/', {
 				redirect: '/login'
@@ -600,4 +601,4 @@
 			console.log(data);
 		});
 	}]);*/
-})();
+//})();
