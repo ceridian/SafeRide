@@ -3,6 +3,30 @@
 	//var app = angular.module('home', ['ngRoute', 'ngAnimate', 'ui.grid', 'growlNotifications']);
 	var app = angular.module('home', ['ngRoute', 'ngAnimate', 'growlNotifications']);
 
+	/*app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
+		$routeProvider
+			.when('/', {
+				redirect: '/login'
+			})
+			.when('/app/login', {
+				templateUrl: 'temps/login-setup.html',
+				controller: 'LoginSetup',
+				controllerAs: 'login'
+			})
+			.when('/app/settings', {
+				templateUrl: 'temps/settings-setup.html',
+				controller: 'SettingsSetup',
+				controllerAs: 'settings'
+			})
+			.otherwise({
+				templateUrl: 'temps/login-setup.html',
+				controller: 'LoginSetup',
+				controllerAs: 'login'
+			});
+
+		$locationProvider.html5Mode(true);
+	} ]);*/
+
 	app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
 		$routeProvider
 			.when('/', {
@@ -12,6 +36,21 @@
 				templateUrl: 'temps/login-setup.html',
 				controller: 'LoginSetup',
 				controllerAs: 'login'
+			})
+			.when('/app/status', {
+				templateUrl: 'temps/status-setup.html',
+				controller: 'StatusSetup',
+				controllerAs: 'status'
+			})
+			.when('/app/hive', {
+				templateUrl: 'temps/hive-setup.html',
+				controller: 'HiveSetup',
+				controllerAs: 'hive'
+			})
+			.when('/app/jobs', {
+				templateUrl: 'temps/jobs-setup.html',
+				controller: 'JobsSetup',
+				controllerAs: 'jobs'
 			})
 			.when('/app/settings', {
 				templateUrl: 'temps/settings-setup.html',
