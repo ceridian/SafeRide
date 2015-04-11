@@ -1,6 +1,6 @@
 (function(){
 	'use strict';
-	//var app = angular.module('home', ['ngRoute', 'ngAnimate', 'ui.grid', 'growlNotifications']);
+
 	var app = angular.module('home', ['ngRoute', 'ngAnimate', 'growlNotifications']);
 
 	app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
@@ -18,70 +18,7 @@
 
 		$locationProvider.html5Mode(true);
 
-	} ]);
-
-	/*app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
-		$routeProvider
-			.when('/', {
-				redirect: '/login'
-			})
-			.when('/app/login', {
-				templateUrl: 'temps/login-setup.html',
-				controller: 'LoginSetup',
-				controllerAs: 'login'
-			})
-			.when('/app/settings', {
-				templateUrl: 'temps/settings-setup.html',
-				controller: 'SettingsSetup',
-				controllerAs: 'settings'
-			})
-			.otherwise({
-				templateUrl: 'temps/login-setup.html',
-				controller: 'LoginSetup',
-				controllerAs: 'login'
-			});
-
-		$locationProvider.html5Mode(true);
-	} ]);*/
-
-	/*app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
-		$routeProvider
-			.when('/', {
-				redirect: '/login'
-			})
-			.when('/app/login', {
-				templateUrl: 'temps/login-setup.html',
-				controller: 'LoginSetup',
-				controllerAs: 'login'
-			})
-			.when('/app/status', {
-				templateUrl: 'temps/status-setup.html',
-				controller: 'StatusSetup',
-				controllerAs: 'status'
-			})
-			.when('/app/hive', {
-				templateUrl: 'temps/hive-setup.html',
-				controller: 'HiveSetup',
-				controllerAs: 'hive'
-			})
-			.when('/app/jobs', {
-				templateUrl: 'temps/jobs-setup.html',
-				controller: 'JobsSetup',
-				controllerAs: 'jobs'
-			})
-			.when('/app/settings', {
-				templateUrl: 'temps/settings-setup.html',
-				controller: 'SettingsSetup',
-				controllerAs: 'settings'
-			})
-			.otherwise({
-				templateUrl: 'temps/login-setup.html',
-				controller: 'LoginSetup',
-				controllerAs: 'login'
-			});
-
-		$locationProvider.html5Mode(true);
-	} ]);*/
+	} ]);	
 
 	app.factory('socket', ['$rootScope', function ($rootScope) {
 		var socket = io.connect();
@@ -148,7 +85,7 @@
 			var pass = main.pass;
 
 			console.log(main);
-			$http.post('/login', {user: user, pass: pass}).success(function(data, status, headers, config){
+			/*$http.post('/login', {user: user, pass: pass}).success(function(data, status, headers, config){
 				var status = data.status;
 				var user = data.user;
 				var group = data.group;
@@ -160,7 +97,7 @@
 				}
 			}).error(function(data, status, headers, config) {
 				console.log(data.status);
-			});
+			});*/
 		};
 	} ]);
 
