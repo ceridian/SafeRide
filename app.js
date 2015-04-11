@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/users', users);
 
-app.get('/404', function(req, res, next){
+/*app.get('/404', function(req, res, next){
   next();
 });
 
@@ -33,7 +33,7 @@ app.get('/404', function(req, res, next){
 
 app.use(function(req, res, next){
   res.redirect('/');
-});
+});*/
 
 // error handlers
 
