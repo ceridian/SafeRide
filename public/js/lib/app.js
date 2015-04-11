@@ -69,6 +69,16 @@
 		};
 	});
 
+	app.directive('navBar', function(){
+		return {
+			restrict: 'E',
+			templateUrl: 'temps/navBar.html',
+			controller: function($scope, $rootScope){
+
+			}
+		};
+	});
+
 	app.controller('LoginSetup', ['$http', '$rootScope', '$location', '$scope', function($http, $rootScope, $location){
 		this.name = 'Login';
 
