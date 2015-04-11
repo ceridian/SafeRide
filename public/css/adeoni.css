@@ -33,3 +33,8 @@
   border-top-right-radius: 0;
 }
 
+.navbar-fixed-bottom {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  opacity: .7;
+}
