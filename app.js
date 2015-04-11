@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexs);
+app.use('/', index);
 app.use('/users', users);
 
 app.get('/404', function(req, res, next){
