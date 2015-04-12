@@ -75,6 +75,7 @@
 			templateUrl: 'temps/searchBar.html',
 			controller: function($scope, $rootScope, $http, $location){
 				$scope.obj = {};
+				$rootScope = "";
 				$scope.submit = function(obj){
 					console.log(obj);
 					$rootScope.routeObj = obj;
@@ -88,7 +89,6 @@
 	app.controller('RoutePlot', ['$rootScope', '$scope', '$http', '$location', function($scope, $http, $location, $rootScope){
 		var obj2 = $rootScope.routeObj;
 		console.log(obj2);
-		console.log(obj);
 	}]);
 
 	app.controller('notifications', ['$rootScope', 'socket', function($rootScope, socket){
