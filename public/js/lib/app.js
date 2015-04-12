@@ -10,6 +10,11 @@
 				controller: 'LoginSetup',
 				controllerAs: 'login'
 			})
+			.when('/route', {
+				templateUrl: 'temps/route-plot.html',
+				controller: 'RoutePlot',
+				controllerAs: 'route'
+			})
 			.otherwise({
 				templateUrl: 'temps/home.html',
 				controller: 'HomePage',
@@ -68,14 +73,21 @@
 		return {
 			restrict: 'E',
 			templateUrl: 'temps/searchBar.html',
-			controller: function($scope, $rootScope, $http){
+			controller: function($scope, $rootScope, $http, $location){
 				$scope.obj = {};
 				$scope.submit = function(obj){
-					console.log(obj);
+					//console.log(obj);
+					$rootScope.routeObj = obj;
+					$location.path('/route');
 				}
 			}
 		};
 	});
+
+	app.controller('RoutePlot', ['$rootScope', '$scope', '$http', '$location', function($scope, $http, $location, $rootScope){
+		var obj = $rootScope.routeObj;
+		console.log(obj);
+	}]);
 
 	app.controller('notifications', ['$rootScope', 'socket', function($rootScope, socket){
 		$rootScope.notes = [];
