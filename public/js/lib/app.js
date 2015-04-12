@@ -74,22 +74,17 @@
 			restrict: 'E',
 			templateUrl: 'temps/searchBar.html',
 			controller: function($scope, $rootScope, $http, $location){
-				$scope.obj = {};
-				$rootScope.routeObj = {};
+				
 				$scope.submit = function(obj){
 					console.log(obj);
-					$rootScope.routeObj = obj;
-					console.log($rootScope.routeObj);
-					$location.path('/route');
+					
 				}
 			}
 		};
 	});
 
 	app.controller('RoutePlot', ['$rootScope', '$scope', '$http', '$location', function($scope, $http, $location, $rootScope){
-		var obj2 = $rootScope.routeObj;
-		console.log(obj2);
-		console.log($rootScope.routeObj);
+		
 	}]);
 
 	app.controller('notifications', ['$rootScope', 'socket', function($rootScope, socket){
