@@ -75,7 +75,7 @@
 			templateUrl: 'temps/searchBar.html',
 			controller: function($scope, $rootScope, $http, $location){
 				$scope.obj = {};
-				$rootScope = "";
+				$rootScope.routeObj = "";
 				$scope.submit = function(obj){
 					console.log(obj);
 					$rootScope.routeObj = obj;
