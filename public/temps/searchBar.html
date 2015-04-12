@@ -1,12 +1,12 @@
 <nav role="navigation" class="navbar navbar-inverse navbar-fixed-bottom">
   <div class="container-fluid">
     <div id="searchBar" class="collapse navbar-collapse">
-      <form class="navbar-form navbar-left" role="search">
-        <input id="to" type="text" class="form-control" placeholder="To">
-        <input id="from" type="text" class="form-control" placeholder="From">
-        <input id="date" type="text" class="form-control" placeholder="Date">
-        <input id="time" type="text" class="form-control" placeholder="Time">
-        <select id="passagers" class="dropdown-toggle" placeholder="Passagers">
+      <form class="navbar-form navbar-left" role="form" ng-submit="submit(obj)">
+        <input id="to" type="text" class="form-control" ng-model="obj.to" placeholder="To">
+        <input id="from" type="text" class="form-control" ng-model="obj.from" placeholder="From">
+        <input id="date" type="text" class="form-control" ng-model="obj.date" placeholder="Date">
+        <input id="time" type="text" class="form-control" ng-model="obj.time" placeholder="Time">
+        <select id="passagers" class="dropdown-toggle" ng-model="obj.passagers" placeholder="Passagers">
           <option>1</option>
           <option>2</option>
           <option>3</option>

@@ -69,8 +69,8 @@
 			restrict: 'E',
 			templateUrl: 'temps/searchBar.html',
 			controller: function($scope, $rootScope, $http){
-				console.log($scope.submit);
-				this.submit = function(obj){
+				$scope.obj = {};
+				$scope.submit = function(obj){
 					console.log(obj);
 				}
 			}
