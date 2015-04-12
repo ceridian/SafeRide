@@ -11,14 +11,14 @@
 				controllerAs: 'login'
 			})
 			.otherwise({
-				templateUrl: 'temps/login-setup.html',
-				controller: 'LoginSetup',
-				controllerAs: 'login'
+				templateUrl: 'home.html',
+				controller: 'HomePage',
+				controllerAs: 'home'
 			});
 
 		$locationProvider.html5Mode(true);
 
-	} ]);	
+	} ]);
 
 	app.factory('socket', ['$rootScope', function ($rootScope) {
 		var socket = io.connect();
@@ -42,16 +42,6 @@
 				})
 			}
 		};
-	}]);
-
-
-
-	app.controller('notifications', ['$rootScope', 'socket', function($rootScope, socket){
-		$rootScope.notes = [];
-		socket.on('alert', function(msg){
-			console.log(msg);
-			$rootScope.notes.push(msg);
-		});
 	}]);
 
 	app.directive('mainView', function(){
@@ -83,6 +73,18 @@
 			}
 		};
 	});
+
+	app.controller('notifications', ['$rootScope', 'socket', function($rootScope, socket){
+		$rootScope.notes = [];
+		socket.on('alert', function(msg){
+			console.log(msg);
+			$rootScope.notes.push(msg);
+		});
+	}]);
+
+	app.controller('HomePage', ['$scope', function($scope){
+		console.log('home');
+	} ]);
 
 	app.controller('MainCtrl', ['$scope', function($scope){
 		$scope.$on('LOAD', function(){$scope.loading=true});
