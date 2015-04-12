@@ -76,8 +76,9 @@
 			controller: function($scope, $rootScope, $http, $location){
 				$scope.obj = {};
 				$scope.submit = function(obj){
-					//console.log(obj);
+					console.log(obj);
 					$rootScope.routeObj = obj;
+					console.log($rootScope.routeObj);
 					$location.path('/route');
 				}
 			}
@@ -85,7 +86,8 @@
 	});
 
 	app.controller('RoutePlot', ['$rootScope', '$scope', '$http', '$location', function($scope, $http, $location, $rootScope){
-		var obj = $rootScope.routeObj;
+		var obj2 = $rootScope.routeObj;
+		console.log(obj2);
 		console.log(obj);
 	}]);
 
