@@ -12,7 +12,7 @@ module.exports = function(sequelize, DataTypes) {
 		classMethods: {
 			associate: function(models){
 				USER.hasMany(models.ride, {as: 'user_id'});
-        USER.hasMany(models.car, {as: 'user_id'});
+        //USER.hasMany(models.car, {as: 'user_id'});
 			}
 		}
 	});
