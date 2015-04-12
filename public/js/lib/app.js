@@ -89,6 +89,7 @@
 	app.controller('RoutePlot', ['$rootScope', '$scope', '$http', '$location', function($scope, $http, $location, $rootScope){
 		var obj2 = $rootScope.routeObj;
 		console.log(obj2);
+		console.log($rootScope.routeObj);
 	}]);
 
 	app.controller('notifications', ['$rootScope', 'socket', function($rootScope, socket){
