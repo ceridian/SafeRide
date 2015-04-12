@@ -11,7 +11,7 @@
 				controllerAs: 'login'
 			})
 			.otherwise({
-				templateUrl: 'home.html',
+				templateUrl: 'temps/home.html',
 				controller: 'HomePage',
 				controllerAs: 'home'
 			});
