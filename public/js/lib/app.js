@@ -68,8 +68,10 @@
 		return {
 			restrict: 'E',
 			templateUrl: 'temps/searchBar.html',
-			controller: function($scope, $rootScope){
-
+			controller: function($scope, $rootScope, $http){
+				this.submit = function(obj){
+					console.log(obj);
+				}
 			}
 		};
 	});
