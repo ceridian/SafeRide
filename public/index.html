@@ -1,9 +1,21 @@
 <!DOCTYPE html>
 <html ng-app="home">
 <head>
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Grayscale - Start Bootstrap Theme</title>
+
+	<link rel="stylesheet" type="text/css" href="css/grayscale.css">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
 	<link rel="stylesheet" type="text/css" href="css/animations.css" />
 	<link rel="stylesheet" type="text/css" href="css/adeoni.css" />
+	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/angular.min.js"></script>
 	<script type="text/javascript" src="js/angular-route.js"></script>
@@ -14,14 +26,14 @@
 	<script type="text/javascript" src="js/d3.v3.min.js"></script>
 	<script type="text/javascript" src="js/lib/app.js"></script>
 	<script type="text/javascript" src="js/lib/settings.js"></script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
 </head>
-<body>
 	<script type="text/javascript">
 	angular.element(document.getElementsByTagName('head')).append(angular.element('<base href="' + window.location.pathname + '" />'));
 	</script>
 </head>
 <script src="/socket.io/socket.io.js"></script>
-<body>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 	<growl-notifications></growl-notifications>
 	<div ng-controller="MainCtrl as main">
 		<div class="backDrop" ng-show="loading">
