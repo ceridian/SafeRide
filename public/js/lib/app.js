@@ -80,10 +80,10 @@
 					var one = Math.random();
 					var two = Math.random();
 					var three = Math.random();
-					var hashids = new Hashids("dosn't really matter", 8, "1234567890abcdef");
+					var hashids = new Hashids("dosntReallyMatter", 8, "1234567890abcdef");
 					var id = hashids.encode(one,two,three);
-					var numbers = hashids.decode(id);
-					console.log(id, numbers);
+					//var numbers = hashids.decode(id);
+					console.log(id);
 				}
 			}
 		};
