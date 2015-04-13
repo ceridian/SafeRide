@@ -77,10 +77,10 @@
 
 				$scope.submit = function(obj){
 					console.log(obj);
-					var one = Math.random();
-					var two = Math.random();
-					var three = Math.random();
-					var hashids = new Hashids("dosntReallyMatter", 8, "1234567890abcdef");
+					var one = Math.round(10 * Math.random());
+					var two = Math.round(10 * Math.random());
+					var three = Math.round(10 * Math.random());
+					var hashids = new Hashids("thissaltsucks");
 					var id = hashids.encode(one,two,three);
 					//var numbers = hashids.decode(id);
 					console.log(id);
