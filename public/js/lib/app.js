@@ -80,7 +80,7 @@
 					var one = Math.round(10 * Math.random());
 					var two = Math.round(10 * Math.random());
 					var three = Math.round(10 * Math.random());
-					var hashids = new Hashids("thissaltsucks");
+					var hashids = new Hashids("thissaltsucks", 8, "0123456789abcdef");
 					var id = hashids.encode(one,two,three);
 					//var numbers = hashids.decode(id);
 					console.log(id);
