@@ -74,13 +74,13 @@
 			restrict: 'E',
 			templateUrl: 'temps/searchBar.html',
 			controller: function($scope, $rootScope, $http, $location){
-				
+
 				$scope.submit = function(obj){
 					console.log(obj);
 					var one = Math.random();
 					var two = Math.random();
 					var three = Math.random();
-					var hashids = new Hashids("dosn't really matter", 8, "1234567890");
+					var hashids = new Hashids("dosn't really matter", 8, "1234567890abcdef");
 					var id = hashids.encode(one,two,three);
 					var numbers = hashids.decode(id);
 					console.log(id, numbers);
@@ -90,7 +90,7 @@
 	});
 
 	app.controller('RoutePlot', ['$rootScope', '$scope', '$http', '$location', function($scope, $http, $location, $rootScope){
-		
+
 	}]);
 
 	app.controller('notifications', ['$rootScope', 'socket', function($rootScope, socket){
