@@ -14,12 +14,12 @@
 				templateUrl: 'temps/route-plot.html',
 				controller: 'RoutePlot',
 				controllerAs: 'route'
-			})
-			.otherwise({
+			});
+			/*.otherwise({
 				templateUrl: 'temps/home.html',
 				controller: 'HomePage',
 				controllerAs: 'home'
-			});
+			});*/
 
 		$locationProvider.html5Mode(true);
 

@@ -5,9 +5,18 @@
     </div>
     <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li>
-          <a href="login">Logout</a>
-        </li>
+        <div ng-switch on="loggedIn">
+          <div ng-switch-when="loggedIn">
+            <li>
+              <a href="/logout">Logout</a>
+            </li>
+          </div>
+          <div ng-switch-default>
+            <li>
+              <a href="login">Login</a>
+            </li>
+          </div>
+        </div>
         <li>
           <a href="post">Post</a>
         </li>
