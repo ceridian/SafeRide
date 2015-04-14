@@ -24,7 +24,7 @@ module.exports = function(passport){
   }, function(req, email, password, done){
     console.log(email, password);
     done(email, null);
-  });
+  }));
   // local signup
   passport.use('local-signup', new LocalStrategy({
     usernameField : 'email',
@@ -33,7 +33,7 @@ module.exports = function(passport){
   }, function(req, email, password, done){
     console.log(email, password);
     done(email, null);
-  }
+  }));
   // facebook strat
   passport.use(new FacebookStrategy({
     clientID        : configAuth.facebookAuth.clientID,
