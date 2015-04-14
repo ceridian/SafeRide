@@ -64,7 +64,8 @@
 			restrict: 'E',
 			templateUrl: 'temps/navBar.html',
 			controller: function($scope, $rootScope){
-
+				$rootScope.loggedIn = null;
+				
 			}
 		};
 	});
