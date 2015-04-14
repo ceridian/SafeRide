@@ -12,7 +12,7 @@ module.exports = function(app, passport) {
       if(err){
         return next(err);
       }else if(!user){
-        res.msg('Incorrect User');
+        //res.msg('Incorrect User');
         return res.send(500);
       }else{
         req.login(user, function(err){
