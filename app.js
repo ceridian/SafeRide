@@ -20,7 +20,7 @@ app.use(session({ secret: 'ilovescotchscotchyscotchscotch' })); // session secre
 app.use(passport.initialize());
 app.use(passport.session());
 
-require('./app/routes.js')(app, passport);
+require('./routes/routes.js')(app, passport);
 
 
 /*app.get('/404', function(req, res, next){
