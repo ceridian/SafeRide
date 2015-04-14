@@ -6,7 +6,7 @@
     <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
         <li ng-switch on="user">
-          <a ng-switch-when="user"href="/logout">Logout</a>
+          <a ng-switch-when="user.getUser()"href="/logout">Logout</a>
           <a ng-switch-default href="login">Login</a>
         </li>
         <li>
