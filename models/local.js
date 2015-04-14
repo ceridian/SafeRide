@@ -7,7 +7,7 @@ module.exports = function(sequelize, DataTypes) {
 	}, {
 		classMethods: {
 			associate: function(models){
-        LOCAL.belongsTo(models.USER)
+        LOCAL.belongsTo(models.USER);
 			}
 		}
 	});

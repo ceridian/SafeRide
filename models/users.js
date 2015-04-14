@@ -10,6 +10,9 @@ module.exports = function(sequelize, DataTypes) {
 		classMethods: {
 			associate: function(models){
 				USER.hasMany(models.LOCAL, {as: 'user_id'});
+				USER.hasMany(models.FACEBOOK, {as: 'user_id'});
+				USER.hasMany(models.TWITTER, {as: 'user_id'});
+				USER.hasMany(models.GOOGLE, {as: 'user_id'});
 			}
 		}
 	});
