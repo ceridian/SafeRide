@@ -22,6 +22,7 @@ module.exports = function(passport){
     passReqToCallback : true
   }, function(req, email, password, done){
     console.log(email, password);
+    done(email, null);
   });
   // local signup
   passport.use('local-signup', new LocalStrategy({
@@ -30,6 +31,7 @@ module.exports = function(passport){
     passReqToCallback : true
   }, function(req, email, password, done){
     console.log(email, password);
+    done(email, null);
   }
   // facebook strat
   passport.use(new FacebookStrategy({
@@ -38,5 +40,6 @@ module.exports = function(passport){
     callbackURL     : configAuth.facebookAuth.callbackURL
   }, function(token, refreshToken, profile, done){
     console.log(token, refreshToken, profile, done);
+    done(profile, null);
   }));
 }
