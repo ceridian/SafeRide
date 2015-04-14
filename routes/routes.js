@@ -12,8 +12,8 @@ module.exports = function(app, passport) {
       if(err){
         return next(err);
       }else if(!user){
-        //res.msg('Incorrect User');
-        return res.send(500);
+        res.send('Incorrect User');
+      //  res.send('')
       }else{
         req.login(user, function(err){
           if(err){
