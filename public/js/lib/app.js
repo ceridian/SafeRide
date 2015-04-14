@@ -119,7 +119,8 @@
 
 			console.log(main);
 			$http.post('/login', {user: user, pass: pass}).success(function(data, status, headers, config){
-				var status = data.status;
+				console.log(data, status);
+				/*var status = data.status;
 				var user = data.user;
 				var group = data.group;
 				if(status == 'ok'){
@@ -127,7 +128,7 @@
 					$location.path('/app/status');
 				}else{
 					console.log(status);
-				}
+				}*/
 			}).error(function(data, status, headers, config) {
 				console.log(data.status);
 			});
