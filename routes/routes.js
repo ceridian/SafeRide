@@ -3,10 +3,6 @@ module.exports = function(app, passport) {
     res.sendFile(path.join(__dirname, '../public/index.html'));
   });
 
-  app.get('/', function(req, res, next) {
-    res.redirect('/');
-  });
-
   app.post('/login', function(req, res, next){
     passport.authenticate('local-login', function(err, user, info) {
       if(err){
