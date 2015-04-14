@@ -16,6 +16,13 @@ module.exports = function(passport){
     });
   });
 
+  passport.use('local-login', new LocalStrategy({
+    usernameField : 'email',
+    passwordField : 'password',
+    passReqToCallback : true
+  }, function(req, email, password, done){
+    console.log(email, password);
+  });
   // local signup
   passport.use('local-signup', new LocalStrategy({
     usernameField : 'email',

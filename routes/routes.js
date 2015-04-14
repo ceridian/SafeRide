@@ -7,6 +7,11 @@ module.exports = function(app, passport) {
     res.redirect('/');
   });
 
+  app.post('/login', passport.authenticate('local-login', {
+    successRedirect : '/profile',
+    failureRedirect : '/login'
+  });
+  
   app.get('/signup', function(req, res) {
 
   });
