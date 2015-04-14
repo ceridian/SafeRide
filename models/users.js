@@ -2,17 +2,14 @@
 
 module.exports = function(sequelize, DataTypes) {
 	var USER = sequelize.define('USER', {
-		user: { type: DataTypes.STRING, allowNull: false },
-		pass: { type: DataTypes.STRING, allowNull: false },
-		group: { type: DataTypes.STRING, allowNull: false, defaultValue: 'user' },
-		email: DataTypes.STRING,
-		firstName: DataTypes.STRING,
-		lastName: DataTypes.STRING,
+		uuid: { type: DataTypes.UUID, defaultValue: DataTypes.UUIDV1, primaryKey: true },
+		first: { type: DataTypes.STRING, allowNull: false },
+		last: { type: DataTypes.STRING, allowNull: false },
+		middle: { type: DataTypes.STRING, allowNull: false }
 	}, {
 		classMethods: {
 			associate: function(models){
-				USER.hasMany(models.RIDE, {as: 'user_id'});
-        USER.hasMany(models.CAR, {as: 'user_id'});
+				USER.hasMany(models.LOCAL, {as: 'user_id'});
 			}
 		}
 	});
