@@ -114,11 +114,11 @@
 		this.name = 'Login';
 
 		this.login = function(main){
-			var user = main.user;
+			var email = main.email;
 			var pass = main.pass;
 
-			console.log(main);
-			$http.post('/login', {user: user, pass: pass}).success(function(data, status, headers, config){
+			console.log(email, pass);
+			$http.post('/login', {email: email, pass: pass}).success(function(data, status, headers, config){
 				console.log(data, status);
 				/*var status = data.status;
 				var user = data.user;
