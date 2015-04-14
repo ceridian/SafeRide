@@ -26,6 +26,9 @@ app.use(passport.session());
 
 require('./routes/routes.js')(app, passport);
 
+app.use(function(req, res, next){
+  res.redirect('/');
+});
 
 /*app.get('/404', function(req, res, next){
   next();
