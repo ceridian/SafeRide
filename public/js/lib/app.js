@@ -26,7 +26,7 @@
 	} ]);
 
 	app.service('userStatus', function(){
-		var user = null;
+		var user = false;
 		return {
 			getUser(){
 				return user;
