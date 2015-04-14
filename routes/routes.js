@@ -7,10 +7,26 @@ module.exports = function(app, passport) {
     res.redirect('/');
   });
 
-  app.post('/login', passport.authenticate('local-login', {
-    successRedirect : '/profile',
-    failureRedirect : '/login'
-  }));
+  app.post('/login', function(req, res, next){
+    passport.authenticate('local-login', function(err, user, info) {
+      if(err){
+        return next(err);
+      }else if(!user){
+        res.msg('Incorrect User');
+        return res.send(500);
+      }else{
+        req.login(user, function(err){
+          if(err){
+            return next(err);
+          }else{
+            console.log('good');
+            return res.send('good');
+          }
+        });
+      })(req, res, next);
+    //successRedirect : '/profile',
+    //failureRedirect : '/login'
+  ));
 
   app.get('/signup', function(req, res) {
 
