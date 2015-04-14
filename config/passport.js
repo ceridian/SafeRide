@@ -11,6 +11,7 @@ module.exports = function(passport){
   });
 
   passport.deserializeUser(function(id, done){
+    console.log(id);
     models.USER.find({ where: { UUID: id}}).then(function(user){
       done(null, user);
     });
