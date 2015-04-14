@@ -23,10 +23,11 @@ module.exports = function(app, passport) {
             return res.send('good');
           }
         });
-      })(req, res, next);
+      }
+    })(req, res, next);
     //successRedirect : '/profile',
     //failureRedirect : '/login'
-  ));
+  });
 
   app.get('/signup', function(req, res) {
 
