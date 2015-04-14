@@ -25,6 +25,18 @@
 
 	} ]);
 
+	app.service('userStatus', function(){
+		var user = null;
+		return {
+			getUser(){
+				return user;
+			},
+			setUser(value){
+				user = value;
+			}
+		}
+	});
+
 	app.factory('socket', ['$rootScope', function ($rootScope) {
 		var socket = io.connect();
 		return {
@@ -63,9 +75,12 @@
 		return {
 			restrict: 'E',
 			templateUrl: 'temps/navBar.html',
-			controller: function($scope, $rootScope){
-				$rootScope.loggedIn = null;
-				
+			controller: function($scope, $rootScope, userStatus){
+				$scope.user = userStatus.getUser();
+				$scope.setUser = function(u){
+					$scope.user = u;
+					userStatus.setUser(u);
+				}
 			}
 		};
 	});
