@@ -10,8 +10,8 @@ module.exports = function(app, passport) {
   app.post('/login', passport.authenticate('local-login', {
     successRedirect : '/profile',
     failureRedirect : '/login'
-  });
-  
+  }));
+
   app.get('/signup', function(req, res) {
 
   });
