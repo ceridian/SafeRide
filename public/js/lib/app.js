@@ -28,10 +28,10 @@
 	app.service('userStatus', function(){
 		var user = false;
 		return {
-			getUser(){
+			getUser: function(){
 				return user;
 			},
-			setUser(value){
+			setUser: function(value){
 				user = value;
 			}
 		}
