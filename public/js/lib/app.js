@@ -14,6 +14,11 @@
 				templateUrl: 'temps/route-plot.html',
 				controller: 'RoutePlot',
 				controllerAs: 'route'
+			})
+			.when('/', {
+				templateUrl: 'temps/home.html',
+				controller: 'HomePage',
+				controllerAs: 'home'
 			});
 			/*.otherwise({
 				templateUrl: 'temps/home.html',
