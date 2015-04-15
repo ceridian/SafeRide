@@ -1,3 +1,5 @@
+var io = require('../lib/io.js');
+
 module.exports = function(app, passport) {
   app.get('/', function(req, res, next) {
     res.sendFile(path.join(__dirname, '../public/index.html'));
@@ -8,6 +10,7 @@ module.exports = function(app, passport) {
       if(err){
         return next(err);
       }else if(!user){
+        io.alert('error', 'Incorrect Email', 'app.post : /login', 'email or username not found');
         res.send('Incorrect User');
       //  res.send('')
       }else{
