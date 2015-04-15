@@ -46,3 +46,22 @@
 .intro {
   height: 400px;
 }
+growl-notifications {
+  position: fixed;
+  top: 150px;
+  right: 10px;
+  z-index: 1000;
+}
+growl-notification {
+  background: rgba(0,0,0,0.6);
+  background-color: white;
+  padding: 15px 30px;
+  width: 200px;
+  display: block;
+  border-radius: 5px;
+  margin-top: 15px;
+  border: 1px solid #eeeeee;
+  border-left-width: 5px;
+  border-radius: 3px;
+  border-left-color: #f0ad4e;
+}
