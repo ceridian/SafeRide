@@ -1,0 +1,13 @@
+<form name="signupForm" id="signupForm" role="form" class="form-signin" ng-submit="signup.signup(login)">
+	<h4 class="form-signin-heading">Please Login</h4>
+	<input type="text" class="form-control" title="Username" name="user" ng-model="signup.email" placeholder="Email" required />
+	<input type="password" class="form-control" title="Password" name="pass" ng-model="signup.pass" placeholder="Password" required />
+	<fieldset class="form-group">
+		<input type="submit" class="btn btn-primary pull-right" value="Signup" />
+	</fieldset>
+</form>
+
+<hr>
+
+<p>Already have an account? <a href="/login">Login</a></p>
+<p>Or go <a href="/">home</a>.</p>

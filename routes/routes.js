@@ -10,7 +10,7 @@ module.exports = function(app, passport) {
       if(err){
         return next(err);
       }else if(!user){
-        io.alert('error', 'Incorrect Email', 'app.post : /login', 'email or username not found');
+        io.alert('error', 'Login Failed', 'app.post : /login', 'Incorrect Email');
         res.send('Incorrect User');
       //  res.send('')
       }else{

@@ -31,6 +31,14 @@ module.exports = function(passport){
     passwordField : 'password',
     passReqToCallback : true
   }, function(req, email, password, done){
+    //process.nextTick(function() {
+      /*models.USER.find({ where: {email: email}}).then(function(user){
+        if(user) {
+          return done(null, false, req.flash('signupMessage', 'That email is already taken.'));
+        } else {
+
+        }
+      })*/
     console.log(email, password);
     done(email, null);
   }));
