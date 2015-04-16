@@ -118,7 +118,7 @@
 	app.controller('Signup', ['$scope', function($scope){
 		this.login = function(obj){
 			console.log(obj);
-		});
+		};
 	}]);
 
 	app.controller('RoutePlot', ['$rootScope', '$scope', '$http', '$location', function($scope, $http, $location, $rootScope){
