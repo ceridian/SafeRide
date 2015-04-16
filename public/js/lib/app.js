@@ -116,7 +116,7 @@
 	});
 
 	app.controller('Signup', ['$scope', function($scope){
-		this.login = function(obj){
+		$scope.signup = function(obj){
 			console.log(obj);
 		};
 	}]);
